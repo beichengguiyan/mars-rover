@@ -17,15 +17,11 @@ public class Coordinates {
         return coordinatesY;
     }
 
-    public void moveToward(String directionShortName) {
-        if (directionShortName.equals(Direction.NORTH.getShortName())) {
-            this.coordinatesY++;
-        } else if (directionShortName.equals(Direction.EAST.getShortName())) {
-            this.coordinatesX++;
-        } else if (directionShortName.equals(Direction.WEST.getShortName())) {
-            this.coordinatesX--;
-        } else if (directionShortName.equals(Direction.SOUTH.getShortName())) {
-            this.coordinatesY--;
-        }
+    public void setCoordinatesX(int coordinatesX) {
+        this.coordinatesX = coordinatesX;
+    }
+
+    public void setCoordinatesY(int coordinatesY) {
+        this.coordinatesY = coordinatesY;
     }
 }

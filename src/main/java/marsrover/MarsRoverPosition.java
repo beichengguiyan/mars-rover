@@ -18,13 +18,18 @@ public class MarsRoverPosition {
         return coordinates.getCoordinatesY();
     }
 
+    public void setCoordinatesX(int coordinatesX) {
+         coordinates.setCoordinatesX(coordinatesX);
+    }
+
+    public void setCoordinatesY(int coordinatesY) {
+         coordinates.setCoordinatesY(coordinatesY);
+    }
+
     public String getDirectionShortName() {
         return direction.getShortName();
     }
 
-    public void move() {
-        coordinates.moveToward(direction.getShortName());
-    }
 
     public void turnLeft() {
         direction = direction.leftDirection();
