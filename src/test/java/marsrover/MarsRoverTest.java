@@ -40,10 +40,10 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void should_return_x_3_y_0_and_N_when_receive_MLLRB_command_give_mars_rover_with_init_place_x_2_y_1_E() {
+    public void should_return_x_3_y_0_and_N_when_receive_MLLRBM_command_give_mars_rover_with_init_place_x_2_y_1_E() {
         MarsRover marsRover = new MarsRover(new MarsRoverPosition(2,1, "E"));
 
-        MarsRoverPosition marsRoverPosition = marsRover.receive("MLLRB");
+        MarsRoverPosition marsRoverPosition = marsRover.receive("MLLRBM");
 
         assertThat(marsRoverPosition.getCoordinatesX(), is(3));
         assertThat(marsRoverPosition.getCoordinatesY(), is(0) );
