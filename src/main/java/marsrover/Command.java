@@ -1,7 +1,7 @@
 package marsrover;
 
 public enum Command {
-    MOVE("M"), TURN_LEFT("L"), TURN_RIGHT("R"),Reverse_MOVE("B");
+    MOVE("M"), TURN_LEFT("L"), TURN_RIGHT("R"),Reverse("B");
 
     private String shortName;
 

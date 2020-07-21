@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class MarsRover {
 
     private MarsRoverPosition marsRoverPosition;
+    private boolean reverse = false;
 
     public MarsRover(MarsRoverPosition marsRoverPosition) {
 
@@ -23,6 +24,10 @@ public class MarsRover {
 
     private void receiveSingleCommand(String command) {
         if (Command.MOVE.getShortName().equals(command)) {
+            if (isReverse()) {
+                reverseMove();
+                return;
+            }
             move();
         }
         if (Command.TURN_LEFT.getShortName().equals(command)) {
@@ -31,19 +36,27 @@ public class MarsRover {
         if (Command.TURN_RIGHT.getShortName().equals(command)) {
             turnRight();
         }
-        if (Command.Reverse_MOVE.getShortName().equals(command)) {
-            reverseMove();
+        if (Command.Reverse.getShortName().equals(command)) {
+            asternReverse();
         }
+    }
+
+    public void asternReverse() {
+        reverse = !reverse;
+    }
+
+    public boolean isReverse() {
+        return reverse;
     }
 
     private void reverseMove() {
         String directionShortName = marsRoverPosition.getDirectionShortName();
         if (directionShortName.equals(Direction.NORTH.getShortName())) {
-            marsRoverPosition.setCoordinatesY(marsRoverPosition.getCoordinatesY() -1);
+            marsRoverPosition.setCoordinatesY(marsRoverPosition.getCoordinatesY() - 1);
         } else if (directionShortName.equals(Direction.EAST.getShortName())) {
-            marsRoverPosition.setCoordinatesX(marsRoverPosition.getCoordinatesX() -1);
+            marsRoverPosition.setCoordinatesX(marsRoverPosition.getCoordinatesX() - 1);
         } else if (directionShortName.equals(Direction.WEST.getShortName())) {
-            marsRoverPosition.setCoordinatesX(marsRoverPosition.getCoordinatesX() +1);
+            marsRoverPosition.setCoordinatesX(marsRoverPosition.getCoordinatesX() + 1);
         } else if (directionShortName.equals(Direction.SOUTH.getShortName())) {
             marsRoverPosition.setCoordinatesY(marsRoverPosition.getCoordinatesY() + 1);
         }
