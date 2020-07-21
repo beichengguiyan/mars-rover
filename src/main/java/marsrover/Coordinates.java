@@ -1,7 +1,7 @@
 package marsrover;
 
 public class Coordinates {
-    private int coordinatesX;
+   /* private int coordinatesX;
     private int coordinatesY;
 
     public Coordinates(int coordinatesX, int coordinatesY) {
@@ -23,5 +23,5 @@ public class Coordinates {
 
     public void setCoordinatesY(int coordinatesY) {
         this.coordinatesY = coordinatesY;
-    }
+    }*/
 }

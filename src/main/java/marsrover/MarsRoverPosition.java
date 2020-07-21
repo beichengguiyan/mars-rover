@@ -28,17 +28,17 @@ public class MarsRoverPosition {
         this.coordinatesY = coordinatesY;
     }
 
+    public Direction getDirection() {
+        return direction;
+    }
+
+    public void setDirection(Direction direction) {
+        this.direction = direction;
+    }
+
     public String getDirectionShortName() {
         return direction.getShortName();
     }
 
-
-    public void turnLeft() {
-        direction = direction.leftDirection();
-    }
-
-    public void turnRight() {
-        direction = direction.rightDirection();
-    }
 
 }
